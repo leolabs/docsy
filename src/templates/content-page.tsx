@@ -14,6 +14,7 @@ const renderAst = new rehypeReact({
 
 const IndexPage = ({data, pageContext}: any) => (
   <Layout>
+    <a href={data.markdownRemark.fields.githubLink}>Edit on GitHub</a>
     <article>{renderAst(data.markdownRemark.htmlAst)}</article>
     <nav>
       {pageContext.prev && <Link to={pageContext.prev.fields.slug}>{getTitleFromNode(pageContext.prev)}</Link>}
