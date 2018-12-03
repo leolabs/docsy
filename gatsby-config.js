@@ -1,5 +1,7 @@
+const userConfig = require('./config/site-config');
+
 module.exports = {
-  siteMetadata: require('./site-meta'),
+  siteMetadata: userConfig,
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
@@ -22,6 +24,7 @@ module.exports = {
               destinationDir: 'assets',
             }
           },
+          'gatsby-remark-component',
           'gatsby-remark-prismjs',
           {
             resolve: 'gatsby-remark-images',
@@ -29,23 +32,21 @@ module.exports = {
               maxWidth: 800
             }
           },
-          'gatsby-remark-component',
           'gatsby-remark-external-links',
           'gatsby-remark-responsive-iframe',
-
         ]
       }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: userConfig.title,
+        short_name: userConfig.shortTitle,
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: userConfig.primaryColor,
+        theme_color: userConfig.primaryColor,
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: userConfig.icon, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
