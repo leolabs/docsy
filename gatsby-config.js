@@ -1,7 +1,11 @@
 const userConfig = require('./config/site-config');
 
 module.exports = {
-  siteMetadata: userConfig,
+  siteMetadata: {
+    ...userConfig,
+    githubReviewId: process.env.REVIEW_ID,
+    githubCommitRef: process.env.COMMIT_REF,
+  },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
