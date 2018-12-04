@@ -7,4 +7,8 @@ module.exports = {
   githubBranch: process.env.BRANCH || 'master',
   icon: 'config/icon.svg',
   primaryColor: '#153cff',
+  copyright: 'Made by Crisp Studio',
+  footerMenu: {
+
+  }
 }
