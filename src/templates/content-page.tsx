@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from "gatsby"
 import rehypeReact from "rehype-react"
 
-import componentMap from "../components/index";
+import componentMap from "../content-components/index";
 
 import Layout from '../layout/layout'
 import { getTitleFromNode } from '../util/title';
