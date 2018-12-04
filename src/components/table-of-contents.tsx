@@ -13,16 +13,16 @@ const arrangeIntoTree = (edges: any[]) => {
 
     let currentLevel = tree;
 
-    pathParts.forEach((part: string) => {
+    pathParts.forEach((part: string, index: number) => {
       const existingPath = currentLevel.filter(level => level.path === part);
+      const isLast = index === pathParts.length - 1;
 
       if (existingPath.length > 0) {
         currentLevel = existingPath[0].children
       } else {
         const newPart = {
           path: part,
-          name: title(part.replace(/-/g, ' ')),
-          title: getTitleFromNode(node),
+          title: isLast ? getTitleFromNode(node) : title(part.replace(/-/g, ' ')),
           slug: node.fields.slug,
           children: [],
         }
@@ -36,10 +36,10 @@ const arrangeIntoTree = (edges: any[]) => {
   return tree;
 }
 
-const TocList = ({tree}) => {
+const TocList = ({tree}: any) => {
   return (<ul>
     {tree.map((entry: any) => <>
-      <li><Link to={entry.slug}>{entry.children.length ? entry.name : entry.title}</Link></li>
+      <li><Link to={entry.slug}>{entry.title}</Link></li>
       {entry.children && <TocList tree={entry.children} />}
     </>)}
   </ul>)
