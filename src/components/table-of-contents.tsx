@@ -4,9 +4,19 @@ import { getTitleFromNode } from '../util/title';
 import title from 'title';
 
 const arrangeIntoTree = (edges: any[]) => {
-  const tree: any[] = [];
+  const nodes = edges.map(edge => edge.node);
 
-  edges.map(edge => edge.node).forEach(node => {
+  // Get index page, if available
+  const tree: any[] = nodes
+    .filter(node => node.fields.slug === '/')
+    .map(node => ({
+      path: '/',
+      title: getTitleFromNode(node),
+      slug: node.fields.slug,
+      children: [],
+    }));
+
+  nodes.forEach(node => {
     const pathParts = node.fields.slug.split('/');
     pathParts.shift();
     pathParts.pop();
@@ -38,10 +48,11 @@ const arrangeIntoTree = (edges: any[]) => {
 
 const TocList = ({tree}: any) => {
   return (<ul>
-    {tree.map((entry: any) => <>
-      <li><Link to={entry.slug}>{entry.title}</Link></li>
+    {tree.map((entry: any, index: number) => <li key={index}>
+      <Link to={entry.slug}>{entry.title}</Link>
       {entry.children && <TocList tree={entry.children} />}
-    </>)}
+    </li>
+    )}
   </ul>)
 }
 
