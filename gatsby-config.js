@@ -3,8 +3,8 @@ const userConfig = require('./config/site-config');
 module.exports = {
   siteMetadata: {
     ...userConfig,
-    githubReviewId: process.env.REVIEW_ID,
-    githubCommitRef: process.env.COMMIT_REF,
+    githubReviewId: process.env.REVIEW_ID || '',
+    githubCommitRef: process.env.COMMIT_REF || '',
   },
   plugins: [
     'gatsby-plugin-typescript',
