@@ -9,6 +9,7 @@
       "esModuleInterop": true,
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
+      "importHelpers": true,
       "noEmit": true,
       "skipLibCheck": true
     }
