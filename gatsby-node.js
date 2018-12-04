@@ -10,7 +10,7 @@ const createGithubUrl = node => {
 exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` });
-    const cleanSlug = slug.replace(/\/?[0-9]+-/g, '');
+    const cleanSlug = slug.replace(/[0-9]+-/g, '').replace(/^\//, '').replace(/index\/$/, '');
 
     createNodeField({
       node,
