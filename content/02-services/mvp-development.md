@@ -11,7 +11,7 @@ At Crisp Studio, we develop and release an MVP in a span of two weeks after the 
 To develop an MVP, we make use of a specific set of existing technologies. These include:
 
 - **[GitHub][2]** for version control and collaboration
-- **[React][3]**, **[React Native]()** and **[Expo][5]** for app development
+- **[React][3]**, **[React Native][4]** and **[Expo][5]** for app development
 - **[Gatsby][6]** and **[Prismic][7]** for website development
 
 ## Support
@@ -29,6 +29,7 @@ Supporting old platforms adds a hefty additional workload to the schedule of dev
 [1]:	https://www.techopedia.com/definition/27809/minimum-viable-product-mvp
 [2]:	https://github.com
 [3]:	https://reactjs.org/
+[4]:    https://facebook.github.io/react-native/
 [5]:	https://expo.io
 [6]:	https://gatsbyjs.org
 [7]:	https://prismic.io
