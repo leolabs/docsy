@@ -3,7 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const siteConfig = require('./config/site-config');
 
 const createGithubUrl = node => {
-  const githubBase = siteConfig.gitHubRepo + '/blob/' + siteConfig.githubBranch;
+  const githubBase = siteConfig.githubRepo + '/blob/' + siteConfig.githubBranch;
   return githubBase + node.fileAbsolutePath.replace(__dirname, '');
 };
 
