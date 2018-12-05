@@ -8,7 +8,8 @@ module.exports = {
   icon: 'config/icon.svg',
   primaryColor: '#153cff',
   copyright: 'Made by Crisp Studio',
-  footerMenu: {
-
-  }
+  asideMenu: [
+    { title: "Homepage", link: "https://crisp.studio" },
+    { title: "Instagram", link: "https://instagr.am/crispstudio" },
+  ]
 }
