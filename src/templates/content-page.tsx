@@ -13,7 +13,7 @@ const renderAst = new rehypeReact({
 }).Compiler
 
 const IndexPage = ({data, pageContext}: any) => (
-  <Layout>
+  <Layout activeSlug={data.markdownRemark.fields.slug}>
     <a href={data.markdownRemark.fields.githubLink}>Edit on GitHub</a>
     <article>{renderAst(data.markdownRemark.htmlAst)}</article>
     <nav>

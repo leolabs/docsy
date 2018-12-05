@@ -2,16 +2,28 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { getTitleFromNode } from '../util/title';
 import title from 'title';
+import classNames from 'classnames';
+
+interface TreeNode {
+  path: string;
+  title: string;
+  isLinkable: boolean;
+  slug: string;
+  depth: number;
+  children: TreeNode[];
+}
 
 const arrangeIntoTree = (edges: any[]) => {
   const nodes = edges.map(edge => edge.node);
 
   // Get index page, if available
-  const tree: any[] = nodes
+  const tree: TreeNode[] = nodes
     .filter(node => node.fields.slug === '/')
     .map(node => ({
       path: '/',
       title: getTitleFromNode(node),
+      isLinkable: true,
+      depth: 0,
       slug: node.fields.slug,
       children: [],
     }));
@@ -34,6 +46,8 @@ const arrangeIntoTree = (edges: any[]) => {
           path: part,
           title: isLast ? getTitleFromNode(node) : title(part.replace(/-/g, ' ')),
           slug: node.fields.slug,
+          isLinkable: isLast,
+          depth: index,
           children: [],
         }
 
@@ -46,17 +60,25 @@ const arrangeIntoTree = (edges: any[]) => {
   return tree;
 }
 
-const TocList = ({tree}: any) => {
+const TocList = ({tree, activeSlug}: any) => {
   return (<ul>
-    {tree.map((entry: any, index: number) => <li key={index}>
-      <Link to={entry.slug}>{entry.title}</Link>
-      {entry.children && <TocList tree={entry.children} />}
-    </li>
+    {tree.map((entry: TreeNode, index: number) =>
+      <li
+        key={index}
+        className={classNames({active: entry.isLinkable && entry.slug === activeSlug}, `depth-${entry.depth}`)}
+      >
+        {entry.isLinkable ? <Link to={entry.slug}>{entry.title}</Link> : entry.title}
+        {entry.children && <TocList activeSlug={activeSlug} tree={entry.children} />}
+      </li>
     )}
   </ul>)
 }
 
-export default () => (
+interface TableOfContentsProps {
+  activeSlug: string;
+};
+
+export default ({activeSlug}: TableOfContentsProps) => (
   <StaticQuery
     query={graphql`
     query TableOfContents {
@@ -77,6 +99,11 @@ export default () => (
       }
     }
   `}
-    render={data => (<TocList tree={arrangeIntoTree(data.allMarkdownRemark.edges)} />)}
+    render={data => (
+      <TocList
+        activeSlug={activeSlug}
+        tree={arrangeIntoTree(data.allMarkdownRemark.edges)}
+      />
+    )}
   />
 )

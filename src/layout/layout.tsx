@@ -6,7 +6,12 @@ import TableOfContents from '../components/table-of-contents';
 import Header from './header'
 import './layout.css'
 
-const Layout = ({ children }: any) => (
+interface LayoutProps {
+  activeSlug: string;
+  children: any;
+}
+
+const Layout: React.FC<LayoutProps> = ({ activeSlug, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -29,7 +34,7 @@ const Layout = ({ children }: any) => (
           <html lang={data.site.siteMetadata.lang} />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <TableOfContents />
+        <TableOfContents activeSlug={activeSlug} />
         <div
           style={{
             margin: '0 auto',
