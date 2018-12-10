@@ -1,25 +1,34 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
-import rehypeReact from "rehype-react"
+import { Link, graphql } from 'gatsby'
+import rehypeReact from 'rehype-react'
 
-import componentMap from "../content-components/index";
+import componentMap from '../content-components/index'
 
 import Layout from '../layout/layout'
-import { getTitleFromNode } from '../util/title';
+import { getTitleFromNode } from '../util/title'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: componentMap
+  components: componentMap,
 }).Compiler
 
-const IndexPage = ({data, pageContext}: any) => (
+const IndexPage = ({ data, pageContext }: any) => (
   <Layout activeSlug={data.markdownRemark.fields.slug}>
-    <a href={data.markdownRemark.fields.githubLink}>Edit on GitHub</a>
-    <article>{renderAst(data.markdownRemark.htmlAst)}</article>
-    <nav>
-      {pageContext.prev && <Link to={pageContext.prev.fields.slug}>{getTitleFromNode(pageContext.prev)}</Link>}
-      {pageContext.next && <Link to={pageContext.next.fields.slug}>{getTitleFromNode(pageContext.next)}</Link>}
-    </nav>
+    <article className="content">
+      {renderAst(data.markdownRemark.htmlAst)}
+      <nav>
+        {pageContext.prev && (
+          <Link to={pageContext.prev.fields.slug}>
+            {getTitleFromNode(pageContext.prev)}
+          </Link>
+        )}
+        {pageContext.next && (
+          <Link to={pageContext.next.fields.slug}>
+            {getTitleFromNode(pageContext.next)}
+          </Link>
+        )}
+      </nav>
+    </article>
   </Layout>
 )
 
@@ -30,7 +39,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
       fields {
-        slug,
+        slug
         githubLink
       }
       frontmatter {
