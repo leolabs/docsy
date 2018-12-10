@@ -1,0 +1,43 @@
+@import '../styles/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: $background-color;
+  font-family: $body-font;
+}
+
+main {
+  max-width: $container-width;
+  margin: auto;
+  margin-bottom: 5rem;
+  z-index: 2;
+
+  display: flex;
+  align-items: stretch;
+
+  aside {
+    display: flex;
+    flex-basis: 250px;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-top: 1rem;
+  }
+
+  > article {
+    background: #fff;
+    padding: 2rem;
+    flex-grow: 1;
+    box-shadow: $main-shadow;
+  }
+}
