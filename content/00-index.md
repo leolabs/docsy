@@ -7,5 +7,3 @@ We believe in the idea of treating your company as a product. Therefore we want 
 </hint>
 
 [Impressum](assets/Impressum.pdf)
-
-![Image](assets/45bi0um1nd121.jpg)
