@@ -1,0 +1,52 @@
+@import "../variables";
+
+.table-of-contents {
+    ul {
+        list-style: none;
+        font-size: 0.7rem;
+        padding-left: 0.5rem;
+        font-weight: 500;
+
+        li {
+            display: block;
+
+            a {
+                text-decoration: none;
+                display: block;
+                padding: 0.3rem 0.5rem;
+                border: 1px solid rgba(0,0,0,0);
+                color: $text-color;
+
+                &:hover {
+                    background-color: rgba(0,0,0,0.1)
+                }
+            }
+
+            span {
+                display: block;
+                padding: 0.3rem 0.5rem;
+                border: 1px solid rgba(0,0,0,0);
+                opacity: 0.7;
+            }
+
+            &.active > a {
+                background-color: #fff;
+                border: 1px solid #efefef;
+                border-right: none;
+                color: $primary-color;
+            }
+        }
+
+        > li {
+
+        }
+    }
+
+    > ul {
+        padding-left: 0;
+
+        > li {
+            margin-bottom: 1rem;
+        }
+    }
+}
