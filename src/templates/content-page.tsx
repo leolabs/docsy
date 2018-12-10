@@ -4,6 +4,8 @@ import rehypeReact from 'rehype-react'
 
 import componentMap from '../content-components/index'
 
+import '../styles/content.scss'
+
 import Layout from '../layout/layout'
 import { getTitleFromNode } from '../util/title'
 
