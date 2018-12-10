@@ -1,0 +1,41 @@
+@import '../styles/variables';
+
+$header-height: 4.5rem;
+
+main {
+  padding-top: $header-height;
+}
+
+header {
+  background: #fff;
+  color: #153cff;
+  box-shadow: $main-shadow;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+
+  .container {
+    max-width: $container-width;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    height: $header-height;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.5rem;
+
+      img {
+        width: 40px;
+        height: auto;
+        margin: 0;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
