@@ -1,0 +1,33 @@
+@import "../variables";
+
+.hint {
+    margin-bottom: 1.3rem;
+
+    border-left: 4px solid;
+    margin-left: 0;
+    padding: 1rem 1.5rem;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    &.info {
+        border-color: #2196F3;
+        background: transparentize($color: #2196F3, $amount: .95);
+    }
+
+    &.warning {
+        border-color: #FF9800;
+        background: transparentize($color: #FF9800, $amount: .95);
+    }
+
+    &.danger {
+        border-color: #F44336;
+        background: transparentize($color: #F44336, $amount: .95);
+    }
+
+    &.success {
+        border-color: #4CAF50;
+        background: transparentize($color: #4CAF50, $amount: .95);
+    }
+}
