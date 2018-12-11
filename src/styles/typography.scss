@@ -15,6 +15,12 @@ p {
   margin-bottom: 1.3em;
 }
 
+a {
+  color: $primary-color;
+
+  &:visited {
+    color: transparentize($color: $primary-color, $amount: .5)
+  }
 }
 
 h1,
