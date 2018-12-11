@@ -17,27 +17,38 @@ body {
 }
 
 main {
-  max-width: $container-width;
-  margin: auto;
-  margin-bottom: 5rem;
-  z-index: 2;
-
   display: flex;
   align-items: stretch;
 
+  min-height: 100vh;
+
   aside {
     display: flex;
-    flex-basis: 250px;
     flex-direction: column;
-    flex-grow: 0;
+    flex-grow: 1;
+    flex-basis: 0;
     flex-shrink: 0;
     padding-top: 1rem;
+
+    &.left {
+      min-width: 250px;
+
+      nav {
+        margin-left: auto;
+        width: 250px;
+      }
+    }
+
+    &.right {
+      background: #fff;
+    }
   }
 
   > article {
     background: #fff;
     padding: 2rem;
-    flex-grow: 1;
+    flex-grow: 2;
+    max-width: $container-width;
     box-shadow: $main-shadow;
   }
 }

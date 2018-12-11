@@ -36,11 +36,12 @@ const Layout: React.FC<LayoutProps> = ({ activeSlug, children }) => (
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>
-          <aside>
+          <aside className="left">
             <TableOfContents activeSlug={activeSlug} />
             {/* TODO: Aside menu */}
           </aside>
           {children}
+          <aside className="right"></aside>
         </main>
       </>
     )}
