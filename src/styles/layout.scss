@@ -31,24 +31,45 @@ main {
     padding-top: 1rem;
 
     &.left {
+      position: sticky;
+      top: 0;
       min-width: 250px;
+      max-height: 100vh;
+      overflow-y: auto;
+
+      @media(max-width: $media-small) {
+        position: absolute;
+        background: #fff;
+        height: 100vh;
+        transform: translateX(-100%);
+      }
 
       nav {
         margin-left: auto;
         width: 250px;
+        padding-left: 1rem;
       }
     }
 
     &.right {
       background: #fff;
+
+      @media(max-width: $media-small) {
+        display: none;
+      }
     }
   }
 
   > article {
     background: #fff;
     padding: 2rem;
-    flex-grow: 2;
+    flex-grow: 10000;
     max-width: $container-width;
-    box-shadow: $main-shadow;
+    border-left: 1px solid #eee;
+    overflow-x: auto;
+
+    @media(max-width: $media-small) {
+      padding: 1rem;
+    }
   }
 }

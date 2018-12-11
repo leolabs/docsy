@@ -1,7 +1,5 @@
 @import '../styles/variables';
 
-$header-height: 4.5rem;
-
 main {
   padding-top: $header-height;
 }
@@ -10,12 +8,13 @@ header {
   background: #fff;
   color: #153cff;
   box-shadow: $main-shadow;
+  border-bottom: 1px solid #ddd;
   z-index: 10;
-  position: fixed;
+  position: absolute;
   width: 100%;
 
   .container {
-    max-width: $container-width;
+    max-width: $container-width + 2 * 250px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -37,5 +36,15 @@ header {
         margin-right: 1rem;
       }
     }
+  }
+}
+
+@media(max-width: $media-small) {
+  header .container {
+    height: $header-height-mobile;
+  }
+
+  main {
+    padding-top: $header-height-mobile;
   }
 }
