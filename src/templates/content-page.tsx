@@ -1,18 +1,18 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import rehypeReact from 'rehype-react'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import rehypeReact from 'rehype-react';
 
-import componentMap from '../content-components/index'
+import componentMap from '../content-components/index';
 
-import '../styles/content.scss'
+import '../styles/content.scss';
 
-import Layout from '../layout/layout'
-import { getTitleFromNode } from '../util/title'
+import Layout from '../layout/layout';
+import { getTitleFromNode } from '../util/title';
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: componentMap,
-}).Compiler
+}).Compiler;
 
 const IndexPage = ({ data, pageContext }: any) => (
   <Layout activeSlug={data.markdownRemark.fields.slug}>
@@ -32,9 +32,9 @@ const IndexPage = ({ data, pageContext }: any) => (
       </nav>
     </article>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   query($slug: String!) {
@@ -53,4 +53,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
