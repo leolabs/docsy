@@ -1,11 +1,12 @@
 @import "../variables";
 
 .hint {
-    margin-bottom: 1.3rem;
+    margin-bottom: $paragraph-margin;
+    border-radius: $border-radius;
 
     border-left: 4px solid;
     margin-left: 0;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
 
     p:last-child {
       margin-bottom: 0;
