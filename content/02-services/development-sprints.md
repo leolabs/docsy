@@ -1,4 +1,4 @@
-# MVP Development
+# Development Sprints
 
 > A minimum viable product (MVP) is a development technique in which a new product or website is developed with sufficient features to satisfy early adopters. The final, complete set of features is only designed and developed after considering feedback from the product's initial users.
 >
