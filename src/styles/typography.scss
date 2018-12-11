@@ -15,8 +15,6 @@ p {
   margin-bottom: 1.3em;
 }
 
-p:last-child {
-    margin-bottom: 0;
 }
 
 h1,
@@ -59,4 +57,8 @@ blockquote {
   margin-left: 0;
   padding: 1rem 2rem;
   padding-right: 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
