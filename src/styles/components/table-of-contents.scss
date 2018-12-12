@@ -21,6 +21,10 @@
                 &:hover, &:focus {
                     background-color: rgba(0,0,0,0.05)
                 }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 1px #ccc;
                 }
             }
 
