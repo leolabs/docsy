@@ -19,7 +19,15 @@ a {
   color: $primary-color;
 
   &:visited {
-    color: transparentize($color: $primary-color, $amount: .5)
+    color: desaturate($primary-color, 20%)
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    color: darken($primary-color, 10)
   }
 }
 
