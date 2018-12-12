@@ -9,10 +9,12 @@ import '../styles/typography.scss';
 
 interface LayoutProps {
   activeSlug: string;
+  title?: string;
+  description?: string;
   children: any;
 }
 
-const Layout: React.FC<LayoutProps> = ({ activeSlug, children }) => (
+const Layout: React.FC<LayoutProps> = ({ activeSlug, title, description, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -26,13 +28,10 @@ const Layout: React.FC<LayoutProps> = ({ activeSlug, children }) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
+          title={(activeSlug !== '/' ? title + " – " : "") + data.site.siteMetadata.title}
         >
           <html lang={data.site.siteMetadata.lang} />
+          {description && <meta name="description" content={description} />}
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>

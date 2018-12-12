@@ -20,6 +20,12 @@ exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
 
     createNodeField({
       node,
+      name: `description`,
+      value: node.frontmatter.description || "",
+    });
+
+    createNodeField({
+      node,
       name: `githubLink`,
       value: createGithubUrl(node),
     });

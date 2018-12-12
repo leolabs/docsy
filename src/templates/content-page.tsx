@@ -16,7 +16,11 @@ const renderAst = new rehypeReact({
 }).Compiler;
 
 const IndexPage = ({ data, pageContext }: any) => (
-  <Layout activeSlug={data.markdownRemark.fields.slug}>
+  <Layout
+    activeSlug={data.markdownRemark.fields.slug}
+    title={getTitleFromNode(data.markdownRemark)}
+    description={data.markdownRemark.fields.description}
+  >
     <article className="content">
       {renderAst(data.markdownRemark.htmlAst)}
       <nav>
@@ -44,6 +48,7 @@ export const query = graphql`
       fields {
         slug
         githubLink
+        description
       }
       frontmatter {
         title
