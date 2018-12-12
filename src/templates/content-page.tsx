@@ -21,12 +21,12 @@ const IndexPage = ({ data, pageContext }: any) => (
       {renderAst(data.markdownRemark.htmlAst)}
       <nav>
         {pageContext.prev && (
-          <Link to={pageContext.prev.fields.slug}>
+          <Link to={pageContext.prev.fields.slug} className="prev">
             {getTitleFromNode(pageContext.prev)}
           </Link>
         )}
         {pageContext.next && (
-          <Link to={pageContext.next.fields.slug}>
+          <Link to={pageContext.next.fields.slug} className="next">
             {getTitleFromNode(pageContext.next)}
           </Link>
         )}

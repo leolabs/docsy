@@ -3,7 +3,7 @@ article.content {
         display: flex;
         justify-content: space-between;
 
-        :last-child {
+        .next {
             margin-left: auto;
         }
     }
