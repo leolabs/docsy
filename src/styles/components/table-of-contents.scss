@@ -1,63 +1,63 @@
-@import "../variables";
+@import '../variables';
 
 .table-of-contents {
-    ul {
-        list-style: none;
-        font-size: 0.8rem;
-        padding-left: 0.5rem;
-        font-weight: 500;
+  ul {
+    list-style: none;
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+    font-weight: 500;
 
-        li {
-            display: block;
+    li {
+      display: block;
 
-            a {
-                text-decoration: none;
-                display: block;
-                padding: 0.4rem 0.8rem;
-                color: $text-color;
-                border-top-left-radius: $border-radius;
-                border-bottom-left-radius: $border-radius;
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 0.4rem 0.8rem;
+        color: $text-color;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
 
-                &:hover, &:focus {
-                    background-color: rgba(0,0,0,0.05)
-                }
-
-                &:active {
-                    background-color: rgba(0,0,0,0.1)
-                }
-
-                &:focus:not(:active) {
-                    outline: none;
-                    box-shadow: 0 0 0 1px #ccc;
-                }
-            }
-
-            span {
-                display: block;
-                padding: 0.4rem 0.8rem;
-                border: 1px solid rgba(0,0,0,0);
-                opacity: 0.7;
-            }
-
-            &.active > a {
-                background-color: #fff;
-                border: none;
-                box-shadow: 0 0 0 1px #efefef;
-                border-right: 3px solid $primary-color;
-                color: $primary-color;
-            }
+        &:hover,
+        &:focus {
+          background-color: rgba(0, 0, 0, 0.05);
         }
 
-        > li {
-
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
         }
+
+        &:focus:not(:active) {
+          outline: none;
+          box-shadow: 0 0 0 1px #ccc;
+        }
+      }
+
+      span {
+        display: block;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid rgba(0, 0, 0, 0);
+        opacity: 0.7;
+      }
+
+      &.active > a {
+        background-color: #fff;
+        border: none;
+        box-shadow: 0 0 0 1px #efefef;
+        border-right: 3px solid $primary-color;
+        color: $primary-color;
+      }
     }
 
-    > ul {
-        padding-left: 0;
-
-        > li {
-            margin-bottom: 1rem;
-        }
+    > li {
     }
+  }
+
+  > ul {
+    padding-left: 0;
+
+    > li {
+      margin-bottom: 1rem;
+    }
+  }
 }
