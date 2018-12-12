@@ -18,8 +18,9 @@
                 border-top-left-radius: $border-radius;
                 border-bottom-left-radius: $border-radius;
 
-                &:hover {
-                    background-color: rgba(0,0,0,0.1)
+                &:hover, &:focus {
+                    background-color: rgba(0,0,0,0.05)
+                }
                 }
             }
 
