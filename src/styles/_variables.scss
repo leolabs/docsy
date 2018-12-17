@@ -1,5 +1,11 @@
 $background-color: #f5f7f9;
-$primary-color: #153cff;
+
+$primary-color-h: 230;
+$primary-color-s: 100%;
+$primary-color-l: 54%;
+
+$primary-color: hsl($primary-color-h, $primary-color-s, $primary-color-l);
+
 
 $main-shadow: 0 1px 1px 0 rgba(116, 129, 141, 0.1);
 
