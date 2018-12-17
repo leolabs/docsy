@@ -21,7 +21,7 @@ export default () => (
     render={data => (
       <nav className="aside-menu menu">
         <ul>
-          {data.site.siteMetadata.asideMenu.map((m: any) => (
+          {data.site.siteMetadata.asideMenu.slice(1).map((m: any) => (
             <li>
               <a href={m.link} target="_blank">
                 <span>{m.title}</span>

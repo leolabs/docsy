@@ -3,6 +3,7 @@ const userConfig = require('./config/site-config');
 module.exports = {
   siteMetadata: {
     ...userConfig,
+    asideMenu: [{ title: '', link: '' }, ...userConfig.asideMenu],
     githubReviewId: process.env.REVIEW_ID || '',
     githubCommitRef: process.env.COMMIT_REF || '',
   },
