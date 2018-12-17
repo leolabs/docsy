@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import TableOfContents from '../components/table-of-contents';
+import AsideMenu from '../components/aside-menu';
 
 import Header from './header';
 import '../styles/layout.scss';
@@ -37,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ activeSlug, title, description, childre
         <main>
           <aside className="left">
             <TableOfContents activeSlug={activeSlug} />
-            {/* TODO: Aside menu */}
+            <AsideMenu />
           </aside>
           {children}
           <aside className="right"></aside>

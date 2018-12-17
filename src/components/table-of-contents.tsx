@@ -4,7 +4,7 @@ import { getTitleFromNode } from '../util/title';
 import title from 'title';
 import classNames from 'classnames';
 
-import '../styles/components/table-of-contents.scss';
+import '../styles/components/menu.scss';
 
 interface TreeNode {
   path: string;
@@ -125,7 +125,7 @@ export default ({ activeSlug }: TableOfContentsProps) => (
       }
     `}
     render={data => (
-      <nav className="table-of-contents">
+      <nav className="table-of-contents menu">
         <TocList
           activeSlug={activeSlug}
           tree={arrangeIntoTree(data.allMarkdownRemark.edges)}

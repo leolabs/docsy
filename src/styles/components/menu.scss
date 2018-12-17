@@ -1,6 +1,6 @@
 @import '../variables';
 
-.table-of-contents {
+.menu {
   ul {
     list-style: none;
     font-size: 0.8rem;
@@ -11,12 +11,20 @@
       display: block;
 
       a {
+        display: flex;
+        align-items: center;
         text-decoration: none;
-        display: block;
         padding: 0.4rem 0.8rem;
         color: $text-color;
         border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
+
+        img {
+          opacity: 0.5;
+          margin-left: auto;
+          height: 20px;
+          width: auto;
+        }
 
         &:hover,
         &:focus {
@@ -33,7 +41,7 @@
         }
       }
 
-      span {
+      > span {
         display: block;
         padding: 0.4rem 0.8rem;
         border: 1px solid rgba(0, 0, 0, 0);
@@ -48,15 +56,12 @@
         color: $primary-color;
       }
     }
-
-    > li {
-    }
   }
 
   > ul {
     padding-left: 0;
 
-    > li {
+    > li.depth-0 {
       margin-bottom: 1rem;
     }
   }
