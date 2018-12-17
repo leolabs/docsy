@@ -20,7 +20,7 @@ header {
     padding: 1rem;
     height: $header-height;
 
-    a {
+    > .logo {
       display: flex;
       align-items: center;
       color: $text-color;
