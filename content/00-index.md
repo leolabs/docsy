@@ -17,5 +17,3 @@ We believe in the idea of treating your company as a product. Therefore we want 
 <hint type="success">
 We believe in the idea of treating your company as a product. Therefore we want to write down as much as possible about the inner workings of Crisp Studio. This version is a WIP. Over time we will fill further information.
 </hint>
-
-[Impressum](assets/Impressum.pdf)
