@@ -1,0 +1,32 @@
+@import "../variables";
+
+.preview-badge {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+
+  background: $primary-color;
+  color: #fff !important;
+
+  text-decoration: none;
+  border-top-right-radius: $border-radius;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+	  filter: invert(100%);
+  }
+
+  @media(max-width: $media-small) {
+    width: 100%;
+    border-radius: 0;
+  }
+}

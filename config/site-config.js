@@ -4,7 +4,7 @@ module.exports = {
   description: '',
   lang: 'en',
   githubRepo: 'https://github.com/leolabs/docsy',
-  githubBranch: process.env.BRANCH || 'master',
+  mainBranch: 'master',
   icon: 'config/icon.svg',
   primaryColor: '#153cff',
   copyright: 'Made by Crisp Studio',

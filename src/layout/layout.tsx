@@ -8,6 +8,8 @@ import Header from './header';
 import '../styles/layout.scss';
 import '../styles/typography.scss';
 
+import PreviewBadge from '../components/preview-badge';
+
 interface LayoutProps {
   activeSlug: string;
   title?: string;
@@ -35,6 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ activeSlug, title, description, childre
           {description && <meta name="description" content={description} />}
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <PreviewBadge />
         <main>
           <aside className="left">
             <TableOfContents activeSlug={activeSlug} />

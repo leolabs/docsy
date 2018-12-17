@@ -4,8 +4,10 @@ module.exports = {
   siteMetadata: {
     ...userConfig,
     asideMenu: [{ title: '', link: '' }, ...userConfig.asideMenu],
+    githubBranch: process.env.BRANCH || userConfig.mainBranch,
     githubReviewId: process.env.REVIEW_ID || '',
     githubCommitRef: process.env.COMMIT_REF || '',
+    buildContext: process.env.CONTEXT || 'production',
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -28,20 +30,20 @@ module.exports = {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
               destinationDir: 'assets',
-            }
+            },
           },
           'gatsby-remark-component',
           'gatsby-remark-prismjs',
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 800
-            }
+              maxWidth: 800,
+            },
           },
           'gatsby-remark-external-links',
           'gatsby-remark-responsive-iframe',
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -59,4 +61,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
