@@ -93,14 +93,14 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
               toggleMenu={this.openMenu}
             />
             <PreviewBadge />
-            <div
-              className={classNames('backdrop', { open: this.state.menuOpen })}
-              onClick={this.closeMenu}
-            />
             <Swipeable
               onSwipedRight={this.openMenu}
               onSwipedLeft={this.closeMenu}
             >
+              <div
+                className={classNames('backdrop', { open: this.state.menuOpen })}
+                onClick={this.closeMenu}
+              />
               <main>
                 <aside
                   className={classNames('left', { open: this.state.menuOpen })}
