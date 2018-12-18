@@ -1,11 +1,10 @@
+@import '/variables';
+
 article.content {
     nav {
         display: flex;
         justify-content: space-between;
 
-        .next {
-            margin-left: auto;
-        }
     }
 
     img {

@@ -3,12 +3,17 @@ import { Link, graphql } from 'gatsby';
 import rehypeReact from 'rehype-react';
 
 import componentMap from '../content-components/index';
+import Button from '../content-components/button';
 
 import '../styles/content.scss';
 import '../styles/prism-theme.scss';
+import backIcon from '../icons/icon-arrow-thin-left-circle.svg';
+import forwardIcon from '../icons/icon-arrow-thin-right-circle.svg';
+
 
 import Layout from '../layout/layout';
 import { getTitleFromNode } from '../util/title';
+
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -25,14 +30,10 @@ const IndexPage = ({ data, pageContext }: any) => (
       {renderAst(data.markdownRemark.htmlAst)}
       <nav>
         {pageContext.prev && (
-          <Link to={pageContext.prev.fields.slug} className="prev">
-            {getTitleFromNode(pageContext.prev)}
-          </Link>
+          <Button to={pageContext.prev.fields.slug} type="secondary" text={getTitleFromNode(pageContext.prev)} leftIcon={backIcon} />
         )}
         {pageContext.next && (
-          <Link to={pageContext.next.fields.slug} className="next">
-            {getTitleFromNode(pageContext.next)}
-          </Link>
+          <Button to={pageContext.next.fields.slug} type="primary" text={getTitleFromNode(pageContext.next)} rightIcon={forwardIcon} />
         )}
       </nav>
     </article>
