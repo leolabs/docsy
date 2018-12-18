@@ -1,4 +1,5 @@
 const userConfig = require('../config/site-config');
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -17,7 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/../content/`,
       },
     },
     'gatsby-transformer-sharp',
@@ -54,7 +55,7 @@ module.exports = {
         background_color: userConfig.primaryColor,
         theme_color: userConfig.primaryColor,
         display: 'minimal-ui',
-        icon: userConfig.icon, // This path is relative to the root of the site.
+        icon: '../config/icon.svg', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

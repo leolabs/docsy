@@ -3,7 +3,7 @@ import React from 'react'
 import classNames from 'classnames';
 
 import '../styles/header.scss';
-import logo from '../../config/icon.svg';
+import logo from '../../../config/icon.svg';
 import hamburgerIcon from '../icons/hamburger.svg';
 
 const Header = ({ siteTitle, toggleMenu }: any) => (

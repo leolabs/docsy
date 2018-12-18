@@ -5,7 +5,6 @@ module.exports = {
   lang: 'en',
   githubRepo: 'https://github.com/leolabs/docsy',
   mainBranch: 'master',
-  icon: 'config/icon.svg',
   primaryColor: '#153cff',
   copyright: 'Made by Crisp Studio',
   asideMenu: [
