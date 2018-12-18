@@ -31,6 +31,7 @@ const IndexPage = ({ data, pageContext }: any) => (
           <Button
             to={pageContext.prev.fields.slug}
             type="secondary"
+            className="prev"
             text={getTitleFromNode(pageContext.prev)}
             leftIcon={backIcon}
           />
@@ -39,6 +40,7 @@ const IndexPage = ({ data, pageContext }: any) => (
           <Button
             to={pageContext.next.fields.slug}
             type="primary"
+            className="next"
             text={getTitleFromNode(pageContext.next)}
             rightIcon={forwardIcon}
           />
