@@ -29,7 +29,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
     menuOpen: false,
   };
 
-  mediaMatcher = window.matchMedia('(max-width: 576px)');
+  mediaMatcher = typeof window !== 'undefined' && window.matchMedia('(max-width: 576px)');
 
   openMenu = () => {
     this.setState({
@@ -52,11 +52,15 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
   };
 
   componentDidMount() {
-    this.mediaMatcher.addListener(this.handleMediaQueryChange);
+    if(this.mediaMatcher) {
+      this.mediaMatcher.addListener(this.handleMediaQueryChange);
+    }
   }
 
   componentWillUnmount() {
-    this.mediaMatcher.removeListener(this.handleMediaQueryChange);
+    if(this.mediaMatcher) {
+      this.mediaMatcher.removeListener(this.handleMediaQueryChange);
+    }
   }
 
   render() {
