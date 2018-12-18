@@ -1,21 +1,8 @@
-# About
+# Homepage
 
-Crisp Studio is a **Digital Product Studio**. We support companies in validating, developing and quickly bringing new and innovative product ideas to market. Together with the customer team, we develop a tangible prototype tested by real users within a five day Design Sprint. With promising user feedback we go one step further and develop a minimal viable product in a very short timeframe. We apply the same process ourselves by transforming internal and external ideas into SaaS \(Software as a service\) solutions and placing them on the market.
+This is the homepage file. Add any content you want to appear on the doc's root here.
 
 <hint type="info">
-We believe in the idea of treating your company as a product. Therefore we want to write down as much as possible about the inner workings of Crisp Studio. This version is a WIP. Over time we will fill further information.
+You can use custom components, like the <code>hint</code> component used here to display
+certain content blocks.
 </hint>
-
-<hint type="warning">
-We believe in the idea of treating your company as a product. Therefore we want to write down as much as possible about the inner workings of Crisp Studio. This version is a WIP. Over time we will fill further information.
-</hint>
-
-<hint type="danger">
-We believe in the idea of treating your company as a product. Therefore we want to write down as much as possible about the inner workings of Crisp Studio. This version is a WIP. Over time we will fill further information.
-</hint>
-
-<hint type="success">
-We believe in the idea of treating your company as a product. Therefore we want to write down as much as possible about the inner workings of Crisp Studio. This version is a WIP. Over time we will fill further information.
-</hint>
-
-[Impressum](assets/Impressum.pdf)
