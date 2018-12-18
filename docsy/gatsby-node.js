@@ -1,6 +1,6 @@
 const path = require('path');
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const siteConfig = require('./config/site-config');
+const siteConfig = require('../config/site-config');
 
 const createGithubUrl = node => {
   const githubBase = siteConfig.githubRepo + '/blob/' + siteConfig.githubBranch;
