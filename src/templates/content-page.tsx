@@ -7,13 +7,11 @@ import Button from '../content-components/button';
 
 import '../styles/content.scss';
 import '../styles/prism-theme.scss';
-import backIcon from '../icons/icon-arrow-thin-left-circle.svg';
-import forwardIcon from '../icons/icon-arrow-thin-right-circle.svg';
-
+import backIcon from '../icons/back-circle.svg';
+import forwardIcon from '../icons/forward-circle.svg';
 
 import Layout from '../layout/layout';
 import { getTitleFromNode } from '../util/title';
-
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -30,10 +28,20 @@ const IndexPage = ({ data, pageContext }: any) => (
       {renderAst(data.markdownRemark.htmlAst)}
       <nav>
         {pageContext.prev && (
-          <Button to={pageContext.prev.fields.slug} type="secondary" text={getTitleFromNode(pageContext.prev)} leftIcon={backIcon} />
+          <Button
+            to={pageContext.prev.fields.slug}
+            type="secondary"
+            text={getTitleFromNode(pageContext.prev)}
+            leftIcon={backIcon}
+          />
         )}
         {pageContext.next && (
-          <Button to={pageContext.next.fields.slug} type="primary" text={getTitleFromNode(pageContext.next)} rightIcon={forwardIcon} />
+          <Button
+            to={pageContext.next.fields.slug}
+            type="primary"
+            text={getTitleFromNode(pageContext.next)}
+            rightIcon={forwardIcon}
+          />
         )}
       </nav>
     </article>
