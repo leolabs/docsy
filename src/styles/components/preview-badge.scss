@@ -5,7 +5,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 20;
+  z-index: 100;
 
   display: flex;
   align-items: center;
@@ -26,7 +26,12 @@
   }
 
   @media(max-width: $media-small) {
-    width: 100%;
-    border-radius: 0;
+    img {
+      margin-right: 0;
+    }
+
+    strong {
+      display: none;
+    }
   }
 }
