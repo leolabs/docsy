@@ -60,12 +60,20 @@ main {
       background: $background-color;
       z-index: 20;
 
+      .menu-header {
+        display: none;
+      }
+
       @media(max-width: $media-small) {
         position: fixed;
         padding: 0;
         height: 100vh;
         transition: transform $transition-time, box-shadow $transition-time;
         transform: translateX(-100%);
+
+        .menu-header {
+          display: flex;
+        }
 
         &.open {
           transform: translateX(0);
