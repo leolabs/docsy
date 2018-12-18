@@ -16,6 +16,27 @@ body {
   font-family: $body-font;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 19;
+
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+  transition: opacity $transition-time;
+  pointer-events: none;
+
+  &.open {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
 main {
   display: flex;
   align-items: stretch;
@@ -36,12 +57,20 @@ main {
       min-width: 250px;
       max-height: 100vh;
       overflow-y: auto;
+      background: $background-color;
+      z-index: 20;
 
       @media(max-width: $media-small) {
-        position: absolute;
-        background: #fff;
+        position: fixed;
+        padding: 0;
         height: 100vh;
+        transition: transform $transition-time, box-shadow $transition-time;
         transform: translateX(-100%);
+
+        &.open {
+          transform: translateX(0);
+          box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+        }
       }
 
       nav {
