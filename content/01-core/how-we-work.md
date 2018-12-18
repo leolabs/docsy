@@ -1,4 +1,4 @@
-# Work day
+# How we work
 
 ### Working hours
 
