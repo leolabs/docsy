@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import Swipeable from 'react-swipeable';
 import { StaticQuery, graphql } from 'gatsby';
 import TableOfContents from '../components/table-of-contents';
 import AsideMenu from '../components/aside-menu';
@@ -30,10 +31,16 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
 
   mediaMatcher = window.matchMedia('(max-width: 576px)');
 
-  toggleMenu = () => {
-    this.setState(state => ({
-      menuOpen: !state.menuOpen,
-    }));
+  openMenu = () => {
+    this.setState({
+      menuOpen: true,
+    });
+  };
+
+  closeMenu = () => {
+    this.setState({
+      menuOpen: false,
+    });
   };
 
   handleMediaQueryChange = (ev: any) => {
@@ -79,24 +86,29 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
             </Helmet>
             <Header
               siteTitle={data.site.siteMetadata.title}
-              toggleMenu={this.toggleMenu}
+              toggleMenu={this.openMenu}
             />
             <PreviewBadge />
             <div
               className={classNames('backdrop', { open: this.state.menuOpen })}
-              onClick={this.toggleMenu}
+              onClick={this.closeMenu}
             />
-            <main>
-              <aside
-                className={classNames('left', { open: this.state.menuOpen })}
-              >
-                <MenuHeader toggleMenu={this.toggleMenu} />
-                <TableOfContents activeSlug={activeSlug} />
-                <AsideMenu />
-              </aside>
-              {children}
-              <aside className="right" />
-            </main>
+            <Swipeable
+              onSwipedRight={this.openMenu}
+              onSwipedLeft={this.closeMenu}
+            >
+              <main>
+                <aside
+                  className={classNames('left', { open: this.state.menuOpen })}
+                >
+                  <MenuHeader toggleMenu={this.closeMenu} />
+                  <TableOfContents activeSlug={activeSlug} />
+                  <AsideMenu />
+                </aside>
+                {children}
+                <aside className="right" />
+              </main>
+            </Swipeable>
           </>
         )}
       />
