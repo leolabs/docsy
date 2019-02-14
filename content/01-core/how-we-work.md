@@ -8,7 +8,9 @@ A normal workday at Crisp Studio consists of eight working hours. We believe tha
 
 We are currently working and operating from the [DigitalHub Aachen](https://aachen.digital), Germany. The DigitalHub is a Co-Working Space located in a beautiful church that was built in 1907. It is also a place, for other startups, makers and interesting companies to meet and exchange ideas.
 
-Although we like where we are working, we don't force people to show up at work. Everyone is **free to work from home**, the beloved coffee shop or any other place that suits the work that seems suitable. There are of course exceptions when it is appropriate or even necessary to meet-in-person. This is, for example, the case when we are conducting a Design Sprint with a client.
+Although we like where we are working, we don't force people to show up at work. Everyone is **free to work from home**, the beloved coffee shop or any other place that suits the work that seems suitable.
+
+There are of course exceptions when it is appropriate or even necessary to meet-in-person. This is, for example, the case when we are conducting a Design Sprint with a client.
 
 ### Time management
 
