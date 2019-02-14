@@ -1,7 +1,15 @@
 # Design Sprints
 
-The Design Sprint is a **Step by Step five day system** for solving big problems and testing new ideas. It was developed by [Google Ventures ](http://www.gv.com/sprint/)and it's been used a lot since then for **building better products faster**. 
+The Design Sprint is a **step by step five day process** for solving big problems and testing new ideas. It was developed by [Google Ventures ](http://www.gv.com/sprint/)and is used by companies like Slack, Netflix, and Airbnb to make faster progress.
 
-Compared to the creative Design Thinking approach it's a little bit more logical, cold and specific. For us at Crisp Studio the reason why we chose to use Sprints is because it's a really obvious and simple way to start working on a product and to make sure you are validating ideas. 
+A Design Sprint is always time-boxed and therefore helps to compress what would normally be months of time, into a single week. It's intense and productive, but fun at the same time.
 
-The status quo approach for developing new products is _Idea - Build - Launch - Learn_ but during this process the _Build_ part tends to stretch out the process longer and longer with no actual data and validation on the go. Closing this loop and making it a lot smaller by **validating and getting data on a product or idea before spending all the time building** is really what the Design Sprint is all about.
+One major goal in the Design Sprint is to create a realistic prototype. The prototype makes ideas tangible and specific. This opens up the opportunity for real customer feedback and data before making any expensive commitments.
+
+## Basic Process
+
+- **Monday:** Defining the challenge and picking a target
+- **Tuesday:** Sketching solutions on paper
+- **Wednesday:** Making decisions and generate testable hypothesizes
+- **Thursday:** Building a high-fidelity prototype
+- **Friday:** Testing the prototype with users
