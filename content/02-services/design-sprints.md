@@ -1,6 +1,6 @@
 # Design Sprints
 
-The Design Sprint is a **step by step five day process** for solving big problems and testing new ideas. It was developed by [Google Ventures ](http://www.gv.com/sprint/)and is used by companies like Slack, Netflix, and Airbnb to make faster progress.
+The Design Sprint is a **step by step five day process** for solving big problems and testing new ideas. It was developed by [Google Ventures](http://www.gv.com/sprint/) and is used by companies like Slack, Netflix, and Airbnb to make faster progress.
 
 A Design Sprint is always time-boxed and therefore helps to compress what would normally be months of time, into a single week. It's intense and productive, but fun at the same time.
 
